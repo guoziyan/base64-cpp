@@ -73,11 +73,11 @@ string _encode_string(string str) {
     string res, tmp;
     int block = (int)str.length()/3;
     int rest = str.length()%3;
-    for (int i=0; i<block; i++) {
+    for (int i = 0; i<block; i++) {
         tmp.push_back(str[3 * i]);
         tmp.push_back(str[3 * i + 1]);
         tmp.push_back(str[3 * i + 2]);
-        str.substr(i * block, i*block+2);
+        str.substr(i * 3, i*3+2);
         res += _encode(tmp);
         tmp.clear();
     }
